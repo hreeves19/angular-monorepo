@@ -15,10 +15,6 @@ pipeline {
         CHROME_BIN = '/bin/google-chrome'
     }
 
-    options {
-        ansiColor('xterm')
-    }
-
     stages {
         stage('Build') {
             steps {

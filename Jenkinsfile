@@ -13,6 +13,14 @@ pipeline {
             steps {
                 sh 'nx e2e angular-store-e2e'
             }
+            steps {
+                sh 'nx run-many -t build'
+            }
+        }
+        stage('Deployment') {
+            steps {
+                sh 'nx run-many -t build'
+            }
         }
     }
 }

@@ -24,6 +24,15 @@ pipeline {
             }
         }
         stage('e2e Tests') {
+            agent {
+                docker {
+                    image 'cypress/base:20.14.0'
+                    // Run the container on the node specified at the
+                    // top-level of the Pipeline, in the same workspace,
+                    // rather than on a new node entirely:
+                    reuseNode true
+                }
+            }
             steps {
                 sh 'npx nx e2e angular-store-e2e'
             }

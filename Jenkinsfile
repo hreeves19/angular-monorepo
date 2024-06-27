@@ -8,22 +8,22 @@ pipeline {
         }
         stage('Lint') {
             steps {
-                sh 'nx lint'
+                sh 'npx nx lint'
             }
         }
         stage('Jest Test') {
             steps {
-                sh 'nx test angular-store'
+                sh 'npx nx test angular-store'
             }
         }
         stage('e2e Tests') {
             steps {
-                sh 'nx e2e angular-store-e2e'
+                sh 'npx nx e2e angular-store-e2e'
             }
         }
         stage('Deployment') {
             steps {
-                sh 'nx run-many -t build'
+                sh 'npx nx run-many -t build'
             }
         }
     }

@@ -8,6 +8,9 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'nx lint'
+            }
+            steps {
                 sh 'nx test angular-store'
             }
             steps {

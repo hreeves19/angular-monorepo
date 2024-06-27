@@ -19,10 +19,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-            }
-        }
-        stage('Lint') {
-            steps {
                 sh 'npx nx lint'
             }
         }

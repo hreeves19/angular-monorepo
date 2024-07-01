@@ -18,7 +18,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm ci'
+                sh 'npm install'
                 sh 'npx nx lint'
             }
         }
@@ -28,6 +28,9 @@ pipeline {
             }
         }
         stage('e2e Tests') {
+            steps {
+                sh 'npm ci'
+            }
             steps {
                 sh 'npx nx e2e angular-store-e2e'
             }

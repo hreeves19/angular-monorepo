@@ -30,8 +30,6 @@ pipeline {
         stage('e2e Tests') {
             steps {
                 sh 'npm ci'
-            }
-            steps {
                 sh 'npx nx e2e angular-store-e2e'
             }
         }

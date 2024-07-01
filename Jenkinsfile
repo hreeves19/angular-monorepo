@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Jest Test') {
             steps {
-                sh 'npx nx test angular-store'
+                sh 'npm run test'
             }
         }
         stage('e2e Tests') {

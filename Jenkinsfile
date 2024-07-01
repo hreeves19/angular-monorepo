@@ -18,13 +18,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                sh 'npm ci'
                 sh 'npx nx lint'
             }
         }
         stage('Jest Test') {
             steps {
-                sh 'npm run test'
+                sh 'npm run test:ci'
             }
         }
         stage('e2e Tests') {

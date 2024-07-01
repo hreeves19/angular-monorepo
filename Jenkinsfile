@@ -30,6 +30,7 @@ pipeline {
         stage('e2e Tests') {
             steps {
                 sh 'npm ci'
+                sh 'npx nx run-many -t build'
                 sh 'npx nx e2e angular-store-e2e'
             }
         }

@@ -19,12 +19,12 @@
   },
   "targetDefaults": {
     "@angular-devkit/build-angular:application": {
-      "cache": true,
+      "cache": false,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
     "@nx/eslint:lint": {
-      "cache": true,
+      "cache": false,
       "inputs": [
         "default",
         "{workspaceRoot}/.eslintrc.json",
@@ -33,7 +33,7 @@
       ]
     },
     "@nx/jest:jest": {
-      "cache": true,
+      "cache": false,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "options": {
         "passWithNoTests": true
